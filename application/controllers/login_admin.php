@@ -8,6 +8,6 @@ class Login_admin extends CI_Controller {
     }
     public function prueba()
     {
-     echo "registrado";
+    $this->load->view('admin/home');
     }
 }

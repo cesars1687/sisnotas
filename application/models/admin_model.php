@@ -3,6 +3,7 @@
 Class Admin_model extends CI_Model {
 
     function login($username, $password) {
+
         $this->db->select('idAdministrador, adm_usuario, adm_pass');
         $this->db->from('administrador');
         $this->db->where('adm_usuario = ' . "'" . $username . "'");

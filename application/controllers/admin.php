@@ -1,5 +1,9 @@
 <?php
-
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+/**
+ * @property mixed form_validation
+ */
 class Admin extends CI_Controller{
 
     public function login(){
@@ -14,7 +18,15 @@ class Admin extends CI_Controller{
             $this->load->view('admin/login');
         } else {
             //Go to private area
-            redirect('login_admin/prueba', 'refresh');
+
+            if(!$this->session->userdata('cesar')){
+                redirect('login_admin');
+            }
+            else{
+
+                redirect('admin/listar_alumno');
+            }
+
         }
 
 
@@ -41,7 +53,35 @@ class Admin extends CI_Controller{
             return false;
         }
     }
+    function logout()
+    {
+       // $datasession = array('id' => '', 'username' => '');
 
+        //$this->session->unset_userdata($datasession);
+        $this->session->sess_destroy();
+        redirect('login_admin', 'refresh');
+    }
 
+    function registrar_alumno(){
 
+        $data['menu'] = $this->load->view('admin/menu_admin','',true);
+        $data['content'] = $this->load->view('admin/registrar_alumno','',true);
+        $this->load->view('admin/encabezado',$data);
+       // $this->load->view('admin/footer');
+    }
+    function listar_alumno(){
+
+        $data['menu'] = $this->load->view('admin/menu_admin','',true);
+        $data['content'] = $this->load->view('admin/listar_alumno','',true);
+        $this->load->view('admin/encabezado',$data);
+        // $this->load->view('admin/footer');
+
+    }
+    function form_registrar_alumno(){
+
+        $this->load->model('alumno_model','',true);
+        $this->alumno_model->registrar();
+        redirect('admin/registrar_alumno','refresh');
+
+    }
 }
