@@ -1,6 +1,6 @@
 <div class="btn-toolbar">
-    <a href="registrar_alumno" class="btn btn-primary">
-        New User
+    <a href="registrar_curso" class="btn btn-primary">
+        New Curso
     </a>
     <button class="btn">Import</button>
     <button class="btn">Export</button>
@@ -10,26 +10,36 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            <th>curso</th>
+            <th>año</th>
+            <th>semestre</th>
+            <th>promedio</th>
+
             <th style="width: 36px;"></th>
         </tr>
         </thead>
         <tbody>
-        <?php $i=1; foreach($alumnos as $alumno):?>
+
+        <?php $i=1; foreach($cursos_abiertos as $curso1):?>
 
         <tr>
             <td><?php echo $i ?></td>
-            <td><?php echo $alumno->alu_nombres ?></td>
-            <td><?php echo $alumno->alu_apellidos?></td>
-            <td>the_mark7</td>
+            <td><?php
+                $dato = $this->db->get_where('cursos',array('idCursos' => $curso1->cursos_idCursos))->result();
+                echo $dato[0]->cur_nombre
+
+                ?></td>
+            <td><?php echo $curso1->cur_abi_año?></td>
+            <td><?php echo $curso1->cur_abi_semestre?></td>
+            <td><?php echo $curso1->cur_abi_promedio?></td>
+
             <td>
                 <a href=><i class="icon-pencil"></i></a>
-                <a href="<?php echo base_url() ?>alumno/eliminar_alumno?id=<?php echo $alumno->idAlumnos ?>" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                <a href="" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
             </td>
         </tr>
-        <?php $i++; endforeach ?>
+            <?php $i++; endforeach ?>
+
 
         </tbody>
     </table>

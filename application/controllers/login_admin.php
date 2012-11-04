@@ -4,10 +4,18 @@ class Login_admin extends CI_Controller {
 
 
     public function index(){
-        $this->load->view('admin/login_admin');
+       /* if($this->session->userdata('logged_in')){
+            redirect('admin/listar_alumno');
+        }
+        else{
+            $this->load->view('admin/login_admin');
+
+        }*/
+        echo md5('admin');
+       $this->load->view('admin/login_admin');
     }
     public function prueba()
     {
-    $this->load->view('admin/home');
+        $this->load->view('admin/login_admin');
     }
 }

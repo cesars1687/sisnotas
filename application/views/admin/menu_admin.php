@@ -12,7 +12,7 @@
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     <li class="divider-vertical"></li>
-                    <li><a href="listar_alumno"><i class="icon-home icon-white"></i> Registrar Alumnos</a></li>
+                    <li><a href="<?php echo base_url()?>alumno/listar_alumno"><i class="icon-home icon-white"></i> Registrar Alumnos</a></li>
                 </ul>
                 <ul class="nav">
                     <li class="divider-vertical"></li>
@@ -20,7 +20,7 @@
                 </ul>
                 <ul class="nav">
                     <li class="divider-vertical"></li>
-                    <li><a href="#"><i class="icon-home icon-white"></i> Registrar Cursos</a></li>
+                    <li><a href="<?php echo base_url()?>cursos_abiertos/listar_cursos_abiertos"><i class="icon-home icon-white"></i> Registrar Cursos</a></li>
                 </ul>
                 <ul class="nav">
                     <li class="divider-vertical"></li>

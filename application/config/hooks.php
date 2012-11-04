@@ -10,7 +10,14 @@
 |
 */
 
+/*$hook['pre_controller'] = array(
+    'class'    => 'Verificar',
+    'function' => 'verifica',
+    'filename' => 'verificar.php',
+    'filepath' => 'hooks',
+    'params'   => ''
 
+);          */
 
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */
