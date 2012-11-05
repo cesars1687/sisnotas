@@ -33,12 +33,14 @@ if (defined('ENVIRONMENT'))
 	switch (ENVIRONMENT)
 	{
 		case 'development':
-			error_reporting(E_ALL);
+            error_reporting(E_ALL ^ E_NOTICE);
+            ini_set('display_errors', 4);
+            ini_set('ignore_repeated_errors', TRUE);
 		break;
 	
 		case 'testing':
 		case 'production':
-			error_reporting(0);
+			error_reporting(4);
 		break;
 
 		default:
