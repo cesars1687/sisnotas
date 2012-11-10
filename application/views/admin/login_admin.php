@@ -21,13 +21,13 @@
                 <a class="close" data-dismiss="alert" href="#">×</a><?php echo validation_errors(); ?>
             </div>
             <?php endif ?>
-            <form method="POST" action="<?php echo base_url(); ?>admin/login" accept-charset="UTF-8">
+            <form  action="<?php echo base_url(); ?>admin/login" accept-charset="UTF-8" method="post">
                 <input type="text" id="username" class="span4" name="username" placeholder="Username" style="height: 35px" required>
                 <input type="password" id="password" class="span4" name="password" placeholder="Password" style="height: 35px" required>
                 <label class="checkbox">
                     <input type="checkbox" name="remember" value="1"> Remember Me
                 </label>
-                <button type="submit" name="submit" class="btn btn-info btn-block">Sign in</button>
+                <input type="submit" name="submit" class="btn btn-info btn-block"/>
             </form>
         </div>
     </div>
