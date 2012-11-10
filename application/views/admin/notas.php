@@ -1,10 +1,10 @@
 <div id="optionsRadios">
     <label class="radio">
-        <input type="radio" name="optionsRadios" id="optionsRadiosAlumno" checked>
+        <input type="radio" name="optionsRadios" id="optionsRadiosAlumno"  <?php //if(isset($notas)){ echo 'checked'; } ?>  >
         alumnos
     </label>
     <label class="radio">
-        <input type="radio" name="optionsRadios" id="optionsRadiosCurso">
+        <input type="radio" name="optionsRadios" id="optionsRadiosCurso"  <?php //if(isset($curso_alus)){ echo 'checked'; } ?>>
         cursos
     </label>
 </div>
@@ -43,7 +43,7 @@
             </tr>
             </thead>
             <tbody>
-
+            <?php if(isset($notas)):?>
             <?php $i = 1; foreach ($notas as $nota): ?>
 
             <tr>
@@ -58,12 +58,13 @@
                 </td>
             </tr>
                 <?php $i++; endforeach ?>
-
+             <?php endif ?>
 
             </tbody>
         </table>
     </div>
 </div>
+
 <div id='cursos'>
     <form class="form-horizontal" method="get" action="<?php echo base_url()?>notas/listar_cursos_notas">
         <div class="control-group">
@@ -90,6 +91,7 @@
             <thead>
             <tr>
                 <th>#</th>
+                <th>Asignaturas</th>
                 <th>Nombre</th>
                 <th>Apellidos</th>
                 <th>Nota</th>
@@ -98,11 +100,12 @@
             </tr>
             </thead>
             <tbody>
-
+            <?php if(isset($curso_alus)):?>
             <?php $i = 1; foreach ($curso_alus as $curso_alu): ?>
 
             <tr>
                 <td><?php echo $i ?></td>
+                <td><?php echo $curso_alu->asi_nombres?> </td>
                 <td><?php echo $curso_alu->alu_nombres?> </td>
                 <td><?php echo $curso_alu->alu_apellidos?> </td>
                 <td><?php echo $curso_alu->alu_asi_nota?> </td>
@@ -112,7 +115,7 @@
                 </td>
             </tr>
                 <?php $i++; endforeach ?>
-
+             <?php endif ?>
 
             </tbody>
         </table>
@@ -134,6 +137,7 @@
 
         var boton = document.getElementsByName("optionsRadios");
         $("#cursos").hide();
+
         $(boton).click(function () {
             if ($(this).attr("id") == "optionsRadiosAlumno") {
                 $("#alumnos").show();

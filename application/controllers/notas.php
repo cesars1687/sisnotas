@@ -30,8 +30,6 @@ class Notas extends CI_Controller{
         $data['menu'] = $this->load->view('admin/menu_admin', '', true);
         $data['content'] = $this->load->view('admin/notas', $data, true);
         $this->load->view('admin/encabezado', $data);
-
-
     }
 
 

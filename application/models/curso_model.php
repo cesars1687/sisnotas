@@ -33,9 +33,9 @@ class Curso_model extends CI_Model
 
     function listar_cursos_alumnos($curso)
     {
-        return $this->db->query()->result('select cursos.cur_nombre, asignatura.asi_nombre,alumnos.alu_nombres,alu_asi.alu_asi_nota from cursos,alumnos,asignatura,curso_abierto,alu_asi
+        return $this->db->query('select cursos.cur_nombre, asignatura.asi_nombre,alumnos.alu_nombres,alu_asi.alu_asi_nota from cursos,alumnos,asignatura,curso_abierto,alu_asi
                                            where cursos.cur_nombre = "' . $curso . '" and curso_abierto.idCurso_abierto=cursos.idCursos and alu_asi.asignatura_idAsignatura = asignatura.idAsignatura and alu_asi.alumnos_idAlumnos=alumnos.idAlumnos
-                                           and asignatura.curso_abierto_idCurso_abierto=curso_abierto.idCurso_abierto ');
+                                           and asignatura.curso_abierto_idCurso_abierto=curso_abierto.idCurso_abierto order by asignatura.asi_nombre')->result();
     }
 
 
