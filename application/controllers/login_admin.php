@@ -11,7 +11,7 @@ class Login_admin extends CI_Controller {
             $this->load->view('admin/login_admin');
 
         }*/
-        echo md5('admin');
+
        $this->load->view('admin/login_admin');
     }
     public function prueba()

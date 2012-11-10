@@ -9,9 +9,10 @@ class Hello extends CI_Controller
     function user_test()
     {
         $this->load->spark('php-activerecord/0.0.2');
-        echo '<pre>';
+        /*echo '<pre>';
         var_dump(Alumnos::all());
-        exit;
+        exit;                */
+
     }
 
 

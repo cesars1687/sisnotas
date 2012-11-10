@@ -9,8 +9,7 @@ class Admin extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->library('doctrine');
-        $this->em = $this->doctrine->em;
+
     }
 
     public function login()
@@ -18,7 +17,7 @@ class Admin extends CI_Controller
         $this->load->model('admin_model', '', TRUE);
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean|max_lenght=8');
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
 
         if ($this->form_validation->run() == FALSE) {
