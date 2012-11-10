@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afd66f53-c822-4c44-8db6-d5465cd0c890" name="Default" comment="modificacion total">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/login_admin.php" afterPath="$PROJECT_DIR$/application/views/admin/login_admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/database.php" afterPath="$PROJECT_DIR$/application/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/encabezado.php" afterPath="$PROJECT_DIR$/application/views/admin/encabezado.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/notas.php" afterPath="$PROJECT_DIR$/application/views/admin/notas.php" />
     </list>
     <ignored path="sisnotas.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,19 +48,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notas.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="notas.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/admin/notas.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="38" selection-start="4405" selection-end="4405" vertical-scroll-proportion="-9.441176">
+            <state line="7" column="88" selection-start="294" selection-end="294" vertical-scroll-proportion="-1.1243386">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="encabezado.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="encabezado.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/encabezado.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="51" selection-start="7" selection-end="7" vertical-scroll-proportion="0.06613757">
+            <state line="4" column="30" selection-start="70" selection-end="70" vertical-scroll-proportion="5.882353">
               <folding />
             </state>
           </provider>
@@ -133,7 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/models/curso.php" />
         <option value="$PROJECT_DIR$/application/models/cursos.php" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin.php" />
@@ -148,6 +147,7 @@
         <option value="$PROJECT_DIR$/application/models/alumno_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/notas.php" />
         <option value="$PROJECT_DIR$/application/models/curso_model.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/encabezado.php" />
         <option value="$PROJECT_DIR$/application/views/admin/notas.php" />
       </list>
     </option>
@@ -611,13 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/notas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="38" selection-start="4405" selection-end="4405" vertical-scroll-proportion="-9.441176">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/login_admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="49" selection-start="1238" selection-end="1238" vertical-scroll-proportion="-10.6470585">
@@ -627,7 +620,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/encabezado.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="51" selection-start="7" selection-end="7" vertical-scroll-proportion="0.06613757">
+        <state line="4" column="30" selection-start="70" selection-end="70" vertical-scroll-proportion="5.882353">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/notas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="88" selection-start="294" selection-end="294" vertical-scroll-proportion="-1.1243386">
           <folding />
         </state>
       </provider>

@@ -1,10 +1,11 @@
 <div id="optionsRadios">
     <label class="radio">
-        <input type="radio" name="optionsRadios" id="optionsRadiosAlumno"  <?php //if(isset($notas)){ echo 'checked'; } ?>  >
+
+        <input type="radio" name="optionsRadios" id="optionsRadiosAlumno" value="alumnos" checked>
         alumnos
     </label>
     <label class="radio">
-        <input type="radio" name="optionsRadios" id="optionsRadiosCurso"  <?php //if(isset($curso_alus)){ echo 'checked'; } ?>>
+        <input type="radio" name="optionsRadios" id="optionsRadiosCurso" value="cursos">
         cursos
     </label>
 </div>
@@ -132,22 +133,22 @@
 <script>
 
 
-    x = $(document);
-    x.ready(function () {
+    $(document).ready(function () {
+        var boton = $("#optionsRadios");
+        $("#cursos").hide()
+        $(boton).change(function () {
+            if($('#optionsRadiosAlumno').is(':checked')) {
 
-        var boton = document.getElementsByName("optionsRadios");
-        $("#cursos").hide();
-
-        $(boton).click(function () {
-            if ($(this).attr("id") == "optionsRadiosAlumno") {
                 $("#alumnos").show();
                 $("#cursos").hide();
-            }
-            else {
+            }else{
+
                 $("#alumnos").hide();
                 $("#cursos").show();
             }
         });
+
     });
+
 
 </script>
