@@ -9,20 +9,23 @@ class Admin extends CI_Controller
     function __construct()
     {
         parent::__construct();
-
+        $this->load->model('admin_model', '', TRUE);
     }
 
     public function login()
     {
+        $username = $_POST['username'];
         $this->load->model('admin_model', '', TRUE);
         $this->load->library('form_validation');
-
+        //$username = $_POST['username'];
+        echo "uaer:".$username;
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
 
         if ($this->form_validation->run() == FALSE) {
             //Field validation failed.  User redirected to login page
             //redirect('login_admin','refresh');
+            echo 'mal';
             $this->load->view('admin/login_admin');
         } else {
             //Go to private area
@@ -35,11 +38,12 @@ class Admin extends CI_Controller
     function check_database($password)
     {
         //Field validation succeeded.  Validate against database
-        $username = $this->input->post('username');
-
+        //$username = $this->input->post('username');
+          $username = $_POST['username'];
+             echo $username;
         //query the database
         $result = $this->admin_model->login($username, $password);
-
+        var_dump($result);
         if ($result) {
             $sess_array = array();
             foreach ($result as $row) {
@@ -52,6 +56,7 @@ class Admin extends CI_Controller
             }
             return TRUE;
         } else {
+
             $this->form_validation->set_message('check_database', 'Invalid username or pass');
             return false;
         }
