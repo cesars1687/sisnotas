@@ -23,7 +23,7 @@ class Curso_model extends CI_Model
 
     function listar_cursos_abiertos()
     {
-        return $this->db->query('select cur_nombre,idCursos,cur_abi_anio,cur_abi_semestre from curso_abierto, cursos where cursos_idCursos=idCursos;')->result();
+        return $this->db->query('select curso_abierto.* , cursos.* from curso_abierto, cursos where cursos_idCursos=idCursos;')->result();
     }
 
     function listar_asignaturas($curso)
@@ -36,6 +36,15 @@ class Curso_model extends CI_Model
         return $this->db->query('select cursos.* , asignatura.* , alumnos.* , alu_asi.* from cursos,alumnos,asignatura,curso_abierto,alu_asi
                                            where cursos.idCursos ='.$curso.' and curso_abierto.idCurso_abierto=cursos.idCursos and alu_asi.asignatura_idAsignatura = asignatura.idAsignatura and alu_asi.alumnos_idAlumnos=alumnos.idAlumnos
                                            and asignatura.curso_abierto_idCurso_abierto=curso_abierto.idCurso_abierto order by asignatura.asi_nombre')->result();
+    }
+
+    function listar_cursos_aod($curso){
+                         return $this->db->query("select alumnos.* ,alu_asi.* , asignatura.* from alumnos , asignatura, curso_abierto , alu_asi
+                            where alu_asi.asignatura_idAsignatura= asignatura.idAsignatura and
+                                        alu_asi.alumnos_idAlumnos = alumnos.idAlumnos
+                                            and curso_abierto.idCurso_abierto = ".$curso."
+                                            and asignatura.curso_abierto_idCurso_abierto = curso_abierto.idCurso_abierto
+                            order by alu_codigo")->result();
     }
 
 

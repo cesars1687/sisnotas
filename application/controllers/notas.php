@@ -36,5 +36,17 @@ class Notas extends CI_Controller{
         $this->load->view('admin/encabezado', $data);
     }
 
+    function listar_cursos_aod(){
 
+        $this->load->model('curso_model');
+        $datos['alumnos']=array();
+        if(isset($_GET['curso'])){
+            $datos['alumnos']=$this->curso_model->listar_cursos_aod($_GET['curso']);
+        }
+        $datos['cursos']= $this->curso_model->listar_cursos_abiertos();
+        $data['menu'] = $this->load->view('admin/menu_admin', '', true);
+        $data['content'] = $this->load->view('admin/ver_aprobados', $datos, true);
+        $this->load->view('admin/encabezado', $data);
+
+    }
 }
