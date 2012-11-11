@@ -92,10 +92,11 @@
         <?php $aux ='';?>
         <?php  foreach($curso_alus as $curso_alu):  ?>
 
-        <?php if($curso_alu->asi_nombre != $aux):?>
+        <?php if($curso_alu->asi_nombre == $aux):?>
         <h3><?php echo $curso_alu->asi_nombre?></h3>
 
         <?php else: ?>
+                <h3><?php echo $curso_alu->asi_nombre?></h3>
 
         <?php endif?>
 
