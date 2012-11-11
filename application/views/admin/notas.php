@@ -3,7 +3,7 @@
 
         <input type="radio" name="optionsRadios" id="optionsRadiosAlumno" value="alumnos" <?php if (isset($notas)) {
             echo 'checked';
-        } ?>>
+        }?> >
         alumnos
     </label>
     <label class="radio">

@@ -26,9 +26,13 @@
 
 </head>
 <body>
+   <div id="contenido">
 
-   <?php echo $menu; ?>
-   <?php echo $content; ?>
+       <?php echo $menu; ?>
+       <?php echo $content; ?>
+
+   </div>
+
 
 </body>
 

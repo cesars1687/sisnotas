@@ -6,3 +6,8 @@ body {
 
     background-image:-webkit-linear-gradient(top, #1A3691, #111)  ;
 }
+#contenido{
+
+    width: 75%;
+    margin: 0 auto 0 auto;
+}
