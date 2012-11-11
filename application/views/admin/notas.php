@@ -89,8 +89,9 @@
     </form>
     <div class="well">
         <?php if(isset($curso_alus)):?>
-        <?php  foreach($curso_alus as $curso_alu):  ?>
         <?php $aux ='';?>
+        <?php  foreach($curso_alus as $curso_alu):  ?>
+
         <?php if($curso_alu->asi_nombre != $aux):?>
         <h3><?php echo $curso_alu->asi_nombre?></h3>
 
