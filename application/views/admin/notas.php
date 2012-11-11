@@ -1,17 +1,17 @@
 <div id="optionsRadios">
     <label class="radio">
 
-        <input type="radio" name="optionsRadios" id="optionsRadiosAlumno" value="alumnos" checked>
+        <input type="radio" name="optionsRadios" id="optionsRadiosAlumno" value="alumnos" <?php if(isset($notas)){echo 'checked';} ?>>
         alumnos
     </label>
     <label class="radio">
-        <input type="radio" name="optionsRadios" id="optionsRadiosCurso" value="cursos">
+        <input type="radio" name="optionsRadios" id="optionsRadiosCurso" value="cursos"<?php if(isset($curso_alus)){echo 'checked';} ?> >
         cursos
     </label>
 </div>
 
 
-<div id='alumnos'>
+<div id='alumnos' style="display: <?php if(!isset($notas)){echo 'none';} ?>" ?>>
     <form class="form-horizontal" method="GET" action="<?php echo base_url()?>notas/listar_alumno_notas">
         <div class="control-group">
             <label class="control-label" for="inputEmail">Nombre</label>
@@ -66,7 +66,7 @@
     </div>
 </div>
 
-<div id='cursos'>
+<div id='cursos' style="display: <?php if(!isset($curso_alus)){echo 'none';} ?>">
     <form class="form-horizontal" method="get" action="<?php echo base_url()?>notas/listar_cursos_notas">
         <div class="control-group">
             <label class="control-label" for="inputEmail">Cursos</label>
@@ -88,6 +88,18 @@
         </div>
     </form>
     <div class="well">
+        <?php if(isset($curso_alus)):?>
+        <?php  foreach($curso_alus as $curso_alu):  ?>
+        <?php $aux ='';?>
+        <?php if($curso_alu->asi_nombre != $aux):?>
+        <h3><?php echo $curso_alu->asi_nombre?></h3>
+
+        <?php else: ?>
+
+        <?php endif?>
+
+        <?php endforeach?>
+        <?php endif?>
         <table class="table">
             <thead>
             <tr>
@@ -106,7 +118,7 @@
 
             <tr>
                 <td><?php echo $i ?></td>
-                <td><?php echo $curso_alu->asi_nombres?> </td>
+                <td><?php echo $curso_alu->asi_nombre?> </td>
                 <td><?php echo $curso_alu->alu_nombres?> </td>
                 <td><?php echo $curso_alu->alu_apellidos?> </td>
                 <td><?php echo $curso_alu->alu_asi_nota?> </td>
@@ -115,11 +127,18 @@
                     <a href="" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
                 </td>
             </tr>
+
                 <?php $i++; endforeach ?>
              <?php endif ?>
 
             </tbody>
+
+
         </table>
+        <h1>asiganutaaaaaaaaa</h1>
+
+
+
     </div>
 
 
@@ -135,7 +154,7 @@
 
     $(document).ready(function () {
         var boton = $("#optionsRadios");
-        $("#cursos").hide()
+
         $(boton).change(function () {
             if($('#optionsRadiosAlumno').is(':checked')) {
 
