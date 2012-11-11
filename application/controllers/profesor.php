@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Manuel
- * Date: 10/11/12
- * Time: 08:32 PM
- * To change this template use File | Settings | File Templates.
- */
+
 class Profesor extends CI_Controller
 {
     function __construct()
@@ -15,9 +9,9 @@ class Profesor extends CI_Controller
         $this->load->library('upload');
         $this->load->helper('download');
         $this->load->model('profesor_model');
-        /*if(!$this->session->userdata('logged_in')){
+        if($this->session->userdata('rol')!=3){
                  redirect('login_admin');
-        } */
+        }
 
 
     }

@@ -1,17 +1,14 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Manuel
- * Date: 10/11/12
- * Time: 08:32 PM
- * To change this template use File | Settings | File Templates.
- */
+
 class Registro extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
         $this->load->model('registro_model');
+        if($this->session->userdata('rol')!=1){
+            redirect('login_admin');
+        }
     }
     function guardar_profesor(){
         $usuario=$_POST['usuario'] ;
@@ -121,18 +118,13 @@ class Registro extends CI_Controller
             </body>
             </html>
             ';
-
-        //para el envío en formato HTML
         $headers = "MIME-Version: 1.0\r\n";
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 
-        //dirección del remitente
         $headers .= "From: Sistema de registro <contacto@kodevian.com>\r\n";
-
-
-
         mail($destinatario,$asunto,$cuerpo,$headers);
         $password=md5($string);
+        echo $password." ".$string;
         $this->registro_model->cambiar_password($user, $password);
         redirect('registro/ver_docentes', 'refresh');
     }

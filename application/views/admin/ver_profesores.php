@@ -21,7 +21,7 @@
             <td><?php echo $profesor->doc_apellidos?> </td>
             <td><?php echo $profesor->usu_usuario?> </td>
             <td>
-                <a href="<? echo base_url();?>registro/cambiar_password?user=<? echo $profesor->idusuarios?>&usuario=<? echo $profesor->usu_usuario?>"><i class="icon-pencil"></i></a>
+                <a href="<? echo base_url();?>registro/cambiar_password?user=<? echo $profesor->idUsuarios?>&usuario=<? echo $profesor->usu_usuario?>"><i class="icon-pencil"></i></a>
             </td>
         </tr>
             <?php $i++; endforeach ?>
