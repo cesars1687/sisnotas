@@ -57,6 +57,7 @@ class Admin extends CI_Controller
         }
     }
 
+
     function logout()
     {
         // $datasession = array('id' => '', 'username' => '');
