@@ -1,5 +1,8 @@
 body {
 
-    background: -webkit-radial-gradient(circle, #ffffff, #2F2727);
+    background: -webkit-radial-gradient(circle, #FBEC99, #f3de68);
 }
+.navbar-inverse .navbar-inner{
 
+    background-image:-webkit-linear-gradient(top, #1A3691, #111)  ;
+}

@@ -17,13 +17,13 @@
 
 <div id='alumnos' style="display: <?php if (!isset($notas)) {
     echo 'none';
-} ?>" ?>>
+} ?>" >
     <form class="form-horizontal" method="GET" action="<?php echo base_url()?>notas/listar_alumno_notas">
         <div class="control-group">
             <label class="control-label" for="inputEmail">Nombre</label>
 
             <div class="controls">
-                <input type="text" name='nombre' id="inputEmail" placeholder="Nombre.." style="height: 30px">
+                <input type="text" name='nombre' id="inputEmail" placeholder="Nombre o Apellido.." style="height: 30px">
             </div>
         </div>
 

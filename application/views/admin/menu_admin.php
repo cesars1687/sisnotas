@@ -26,7 +26,10 @@
                     <li class="divider-vertical"></li>
                     <li><a href="#"><i class="icon-home icon-white"></i> Reportes</a></li>
                 </ul>
-
+                <ul class="nav">
+                    <li class="divider-vertical"></li>
+                    <li><a href="<?php echo base_url()?>notas"><i class="icon-home icon-white"></i> Filtrar notas</a></li>
+                </ul>
 
                 <div class="pull-right">
                     <ul class="nav pull-right">

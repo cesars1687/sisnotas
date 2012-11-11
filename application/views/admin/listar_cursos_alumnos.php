@@ -1,16 +1,11 @@
-<div class="btn-toolbar">
-    <a href="registrar_curso" class="btn btn-primary">
-        New Curso
-    </a>
-    <button class="btn">Import</button>
-    <button class="btn">Export</button>
-</div>
+
 <div>
-    <label>Cursos:</label>
+    <label>Cursos</label>
 
     <form method="get" action="<?php echo base_url() ?>cursos_abiertos/listar_cursos_alumnos">
 
         <select id='miselect' name='curso'>
+
             <?php foreach ($cursos as $curso): ?>
             <?php if ($_GET['curso'] == $curso->idCursos): ?>
 
@@ -22,7 +17,7 @@
 
             <?php endforeach ?>
         </select>
-        <label>Asignatura:</label>
+        <label>Asignatura</label>
         <select name='asig'>
 
             <?php foreach ($asignaturas as $asignatura): ?>
@@ -34,7 +29,14 @@
                 <?php endif ?>
             <?php endforeach ?>
         </select>
-        <input type="submit" value="go">
+        <div class="control-group">
+            <div class="controls">
+
+                <button type="submit" class="btn">Buscar</button>
+            </div>
+        </div>
+
+
     </form>
 
 </div>
@@ -75,7 +77,7 @@
         </tbody>
     </table>
 </div>
-<div class="pagination">
+<!--<div class="pagination" style="margin-left: 600px">
     <ul>
         <li><a href="#">Prev</a></li>
         <li><a href="#">1</a></li>
@@ -84,7 +86,7 @@
         <li><a href="#">4</a></li>
         <li><a href="#">Next</a></li>
     </ul>
-</div>
+</div> -->
 <script>
 
     x = $(document)
