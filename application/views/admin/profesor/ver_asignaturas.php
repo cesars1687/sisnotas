@@ -1,8 +1,32 @@
-<?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Manuel
- * Date: 10/11/12
- * Time: 08:35 PM
- * To change this template use File | Settings | File Templates.
- */
+<div class="well">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>nombre de la asignatura</th>
+            <th>tomar asistencia</th>
+            <th>ver asistencias</th>
+            <th>registrar notas</th>
+            <th>descargar lista de alumnos</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <?php $i = 1; foreach($asignaturas as $asignatura): ?>
+
+        <tr>
+            <td><?php echo $i ?></td>
+            <td><?php echo $asignatura->asi_nombre?> </td>
+            <td><a href="<?php echo base_url(); ?>profesor/alumnos_asistencia?asignatura=<? echo $asignatura->idAsignatura?>"><i class="icon-pencil"></i></a></td>
+            <td><a href="<? echo base_url();?>profesor/ver_asistencias?asignatura=<? echo $asignatura->idAsignatura?>"><i class="icon-pencil"></i></a></td>
+            <td><a href="<? echo base_url();?>profesor/ver_notas?asignatura=<? echo $asignatura->idAsignatura?>"><i class="icon-pencil"></i></a></td>
+            <td>
+                <a href="<? echo base_url();?>profesor/generar_excel?asignatura=<? echo $asignatura->idAsignatura?>&asignatura_nombre=<? echo $asignatura->asi_nombre?>"><i class="icon-pencil"></i></a>
+            </td>
+        </tr>
+            <?php $i++; endforeach ?>
+
+
+        </tbody>
+    </table>
+</div>
