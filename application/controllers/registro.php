@@ -6,9 +6,7 @@ class Registro extends CI_Controller
     {
         parent::__construct();
         $this->load->model('registro_model');
-        if($this->session->userdata('rol')!=1){
-            redirect('login_admin');
-        }
+
     }
     function guardar_profesor(){
         $usuario=$_POST['usuario'] ;

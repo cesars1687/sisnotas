@@ -6,9 +6,10 @@ class Alumno extends CI_Controller
         parent::__construct();
         $this->load->helper(array('form','url'));
         $this->load->library('upload');
-        /*if(!$this->session->userdata('logged_in')){
-                 redirect('login_admin');
-        } */
+        $this->load->helper('download');
+        $this->load->model('profesor_model');
+        $this->load->library('session');
+
 
 
     }
@@ -23,6 +24,7 @@ class Alumno extends CI_Controller
 
     function listar_alumno()
     {
+
         $this->load->model('alumno_model', '', true);
         $data['menu'] = $this->load->view('admin/menu_admin', '', true);
         $alumnos['alumnos'] = $this->db->get('alumnos')->result();
