@@ -26,11 +26,11 @@ class Notas extends CI_Controller{
 
     }
     function listar_cursos_notas(){
+
         $this->load->model('curso_model');
         $curso = $_GET['curso'];
         $dato['cursos']= $this->curso_model->listar_cursos_abiertos();
         $dato['curso_alus']=$this->curso_model->listar_cursos_alumnos($curso);
-
         $data['menu'] = $this->load->view('admin/menu_admin', '', true);
         $data['content'] = $this->load->view('admin/notas', $dato, true);
         $this->load->view('admin/encabezado', $data);
