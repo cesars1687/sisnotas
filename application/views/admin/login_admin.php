@@ -15,17 +15,17 @@
 <div class="container">
     <div class="row" style="margin-top: 200px">
         <div class="span4 offset4 well">
-            <legend>Please Sign In</legend>
+            <legend>Autentificacion</legend>
              <?php if(validation_errors()): ?>
             <div class="alert alert-error" >
                 <a class="close" data-dismiss="alert" href="#">×</a><?php echo validation_errors(); ?>
             </div>
             <?php endif ?>
             <form  action="<?php echo base_url(); ?>admin/login" accept-charset="UTF-8" method="post">
-                <input type="text" id="username" class="span4" name="username" placeholder="Username" style="height: 35px" required>
-                <input type="password" id="password" class="span4" name="password" placeholder="Password" style="height: 35px" required>
+                <input type="text" id="username" class="span4" name="username" placeholder="Usuario.." style="height: 35px" required>
+                <input type="password" id="password" class="span4" name="password" placeholder="Contraseña.." style="height: 35px" required>
                 <label class="checkbox">
-                    <input type="checkbox" name="remember" value="1"> Remember Me
+                    <input type="checkbox" name="remember" value="1"> Recordar
                 </label>
                 <input type="submit" name="submit" class="btn btn-info btn-block"/>
             </form>

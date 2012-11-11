@@ -49,7 +49,7 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>nombre_alumno</th>
+            <th>nombre</th>
             <th>semestre</th>
             <th>promedio</th>
 
