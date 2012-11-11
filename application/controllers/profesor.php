@@ -44,7 +44,6 @@ class Profesor extends CI_Controller
     }
     function ver_asistencias(){
         $asignatura=$_GET['asignatura'];
-
         $this->load->model('profesor_model');
         $data1['asistencias']=$this->profesor_model->ver_alumnos_asistencia($asignatura);
         $data['menu'] = $this->load->view('admin/profesor/menu_profesor', '', true);

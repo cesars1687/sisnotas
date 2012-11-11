@@ -16,7 +16,7 @@
                 </ul>
                 <ul class="nav">
                     <li class="divider-vertical"></li>
-                    <li><a href="#"><i class="icon-home icon-white"></i> Registrar Docentes</a></li>
+                    <li><a href="<?php echo base_url()?>registro/ver_docentes"><i class="icon-home icon-white"></i> Ver Docentes</a></li>
                 </ul>
                 <ul class="nav">
                     <li class="divider-vertical"></li>
