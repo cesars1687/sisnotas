@@ -36,6 +36,7 @@ class Registro extends CI_Controller
             $string .= $char;
             $i++;
         }
+        /*
         $destinatario = $usuario;
         $asunto = "Este mensaje es de prueba";
         $cuerpo = '
@@ -63,8 +64,8 @@ class Registro extends CI_Controller
 
 
 
-            mail($destinatario,$asunto,$cuerpo,$headers);
-            $password=md5($string);
+            mail($destinatario,$asunto,$cuerpo,$headers); */
+            $password=$string;
             $this->registro_model->registrar_profesor($usuario, $password, $nombre, $apellido);
         redirect('registro/ver_docentes', 'refresh');
 
@@ -101,7 +102,11 @@ class Registro extends CI_Controller
             $string .= $char;
             $i++;
         }
+        /*ini_set("SMTP",'127.0.0.1');
+        ini_set("smtp_port",'25');
+        //ini_set("sendmail_from","electro.eureka.store@gmail.com");
         $destinatario = $usuario;
+        $destinatario = "manuelriosvega@gmail.com";
         $asunto = "Este mensaje es de prueba";
         $cuerpo = '
             <html>
@@ -121,9 +126,10 @@ class Registro extends CI_Controller
         $headers = "MIME-Version: 1.0\r\n";
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 
-        $headers .= "From: Sistema de registro <contacto@kodevian.com>\r\n";
+        $headers .= "From: Sistema de registro <manuelriosvega@gamil.com>\r\n";
         mail($destinatario,$asunto,$cuerpo,$headers);
-        $password=md5($string);
+        */
+        $password=$string;
         echo $password." ".$string;
         $this->registro_model->cambiar_password($user, $password);
         redirect('registro/ver_docentes', 'refresh');
