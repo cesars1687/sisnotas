@@ -20,11 +20,11 @@
                 </ul>
                 <ul class="nav">
                     <li class="divider-vertical"></li>
-                    <li><a href="<?php echo base_url()?>cursos_abiertos/listar_cursos_alumnos"><i class="icon-home icon-white"></i> Registrar Cursos</a></li>
+                    <li><a href="<?php echo base_url()?>cursos_abiertos/listar_cursos_alumnos"><i class="icon-home icon-white"></i> Reportes</a></li>
                 </ul>
                 <ul class="nav">
                     <li class="divider-vertical"></li>
-                    <li><a href="#"><i class="icon-home icon-white"></i> Reportes</a></li>
+                    <li><a href="<?php echo base_url()?>notas/listar_cursos_aod"><i class="icon-home icon-white"></i> Ver aprobados y Desaprobados</a></li>
                 </ul>
                 <ul class="nav">
                     <li class="divider-vertical"></li>
