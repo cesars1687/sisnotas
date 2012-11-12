@@ -38,5 +38,14 @@ class Curso_model extends CI_Model
                                            and asignatura.curso_abierto_idCurso_abierto=curso_abierto.idCurso_abierto order by asignatura.asi_nombre')->result();
     }
 
+    function listar_cursos_aod($curso){
+                         return $this->db->query("select alumnos.* ,alu_asi.* , asignatura.* from alumnos , asignatura, curso_abierto , alu_asi
+                            where alu_asi.asignatura_idAsignatura= asignatura.idAsignatura and
+                                        alu_asi.alumnos_idAlumnos = alumnos.idAlumnos
+                                            and curso_abierto.idCurso_abierto = ".$curso."
+                                            and asignatura.curso_abierto_idCurso_abierto = curso_abierto.idCurso_abierto
+                            order by alu_codigo")->result();
+    }
+
 
 }
