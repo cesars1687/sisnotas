@@ -3,14 +3,15 @@
 class Cursos_abiertos extends CI_Controller
 {
 
+
     function __construct()
     {
         parent::__construct();
-        $this->load->helper(array('form', 'url'));
+        $this->load->helper(array('form','url'));
         $this->load->library('upload');
-        /* if(!$this->session->userdata('logged_in')){
-             redirect('login_admin');
-         }*/
+        $this->load->helper('download');
+
+
 
 
     }

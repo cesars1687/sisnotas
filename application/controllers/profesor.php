@@ -9,9 +9,7 @@ class Profesor extends CI_Controller
         $this->load->library('upload');
         $this->load->helper('download');
         $this->load->model('profesor_model');
-        if($this->session->userdata('rol')!=3){
-                 redirect('login_admin');
-        }
+
 
 
     }

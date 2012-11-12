@@ -3,7 +3,15 @@
 class Notas extends CI_Controller{
 
 
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->helper(array('form','url'));
+        $this->load->library('upload');
+        $this->load->helper('download');
+        $this->load->model('profesor_model');
 
+    }
     function index(){
 
         $this->load->model('curso_model');
