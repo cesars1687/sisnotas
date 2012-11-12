@@ -23,7 +23,7 @@ class Curso_model extends CI_Model
 
     function listar_cursos_abiertos()
     {
-        return $this->db->query('select cur_nombre,idCursos,cur_abi_anio,cur_abi_semestre from curso_abierto, cursos where cursos_idCursos=idCursos;')->result();
+        return $this->db->query('select curso_abierto.* , cursos.* from curso_abierto, cursos where cursos_idCursos=idCursos;')->result();
     }
 
     function listar_asignaturas($curso)
