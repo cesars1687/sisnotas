@@ -24,7 +24,7 @@ class Alumno extends CI_Controller
 
     function listar_alumno()
     {
-        echo "sesion:".$this->session->userdata('rol');
+
         $this->load->model('alumno_model', '', true);
         $data['menu'] = $this->load->view('admin/menu_admin', '', true);
         $alumnos['alumnos'] = $this->db->get('alumnos')->result();
