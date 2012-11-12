@@ -1,17 +1,23 @@
 <div id="optionsRadios">
     <label class="radio">
 
-        <input type="radio" name="optionsRadios" id="optionsRadiosAlumno" value="alumnos" <?php if(isset($notas)){echo 'checked';} ?>>
+        <input type="radio" name="optionsRadios" id="optionsRadiosAlumno" value="alumnos" <?php if (isset($notas)) {
+            echo 'checked';
+        } ?>>
         alumnos
     </label>
     <label class="radio">
-        <input type="radio" name="optionsRadios" id="optionsRadiosCurso" value="cursos"<?php if(isset($curso_alus)){echo 'checked';} ?> >
+        <input type="radio" name="optionsRadios" id="optionsRadiosCurso" value="cursos"<?php if (isset($curso_alus)) {
+            echo 'checked';
+        } ?> >
         cursos
     </label>
 </div>
 
 
-<div id='alumnos' style="display: <?php if(!isset($notas)){echo 'none';} ?>" ?>>
+<div id='alumnos' style="display: <?php if (!isset($notas)) {
+    echo 'none';
+} ?>" ?>>
     <form class="form-horizontal" method="GET" action="<?php echo base_url()?>notas/listar_alumno_notas">
         <div class="control-group">
             <label class="control-label" for="inputEmail">Nombre</label>
@@ -44,29 +50,32 @@
             </tr>
             </thead>
             <tbody>
-            <?php if(isset($notas)):?>
-            <?php $i = 1; foreach ($notas as $nota): ?>
+            <?php if (isset($notas)): ?>
+                <?php $i = 1;
+                foreach ($notas as $nota): ?>
 
-            <tr>
-                <td><?php echo $i ?></td>
-                <td><?php echo $nota->asi_nombre?> </td>
-                <td><?php echo $nota->alu_nombres?> </td>
-                <td><?php echo $nota->alu_apellidos?> </td>
-                <td><?php echo $nota->alu_asi_nota?> </td>
-                <td>
-                    <a href=><i class="icon-pencil"></i></a>
-                    <a href="" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                </td>
-            </tr>
-                <?php $i++; endforeach ?>
-             <?php endif ?>
+                <tr>
+                    <td><?php echo $i ?></td>
+                    <td><?php echo $nota->asi_nombre?> </td>
+                    <td><?php echo $nota->alu_nombres?> </td>
+                    <td><?php echo $nota->alu_apellidos?> </td>
+                    <td><?php echo $nota->alu_asi_nota?> </td>
+                    <td>
+                        <a href=><i class="icon-pencil"></i></a>
+                        <a href="" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                    </td>
+                </tr>
+                    <?php $i++; endforeach ?>
+                <?php endif ?>
 
             </tbody>
         </table>
     </div>
 </div>
 
-<div id='cursos' style="display: <?php if(!isset($curso_alus)){echo 'none';} ?>">
+<div id='cursos' style="display: <?php if (!isset($curso_alus)) {
+    echo 'none';
+} ?>">
     <form class="form-horizontal" method="get" action="<?php echo base_url()?>notas/listar_cursos_notas">
         <div class="control-group">
             <label class="control-label" for="inputEmail">Cursos</label>
@@ -88,20 +97,6 @@
         </div>
     </form>
     <div class="well">
-        <?php if(isset($curso_alus)):?>
-        <?php $aux ='';?>
-        <?php  foreach($curso_alus as $curso_alu):  ?>
-
-        <?php if($curso_alu->asi_nombre == $aux):?>
-        <h3><?php echo $curso_alu->asi_nombre?></h3>
-
-        <?php else: ?>
-                <h3><?php echo $curso_alu->asi_nombre?></h3>
-
-        <?php endif?>
-
-        <?php endforeach?>
-        <?php endif?>
         <table class="table">
             <thead>
             <tr>
@@ -115,35 +110,32 @@
             </tr>
             </thead>
             <tbody>
-            <?php if(isset($curso_alus)):?>
-            <?php $i = 1; foreach ($curso_alus as $curso_alu): ?>
+            <?php if (isset($curso_alus)): ?>
+                <?php $i = 1;
+                foreach ($curso_alus as $curso_alu): ?>
 
-            <tr>
-                <td><?php echo $i ?></td>
-                <td><?php echo $curso_alu->asi_nombre?> </td>
-                <td><?php echo $curso_alu->alu_nombres?> </td>
-                <td><?php echo $curso_alu->alu_apellidos?> </td>
-                <td><?php echo $curso_alu->alu_asi_nota?> </td>
-                <td>
-                    <a href=><i class="icon-pencil"></i></a>
-                    <a href="" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                </td>
-            </tr>
+                <tr>
+                    <td><?php echo $i ?></td>
+                    <td><?php echo $curso_alu->asi_nombre?> </td>
+                    <td><?php echo $curso_alu->alu_nombres?> </td>
+                    <td><?php echo $curso_alu->alu_apellidos?> </td>
+                    <td><?php echo $curso_alu->alu_asi_nota?> </td>
+                    <td>
+                        <a href=><i class="icon-pencil"></i></a>
+                        <a href="" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                    </td>
+                </tr>
 
-                <?php $i++; endforeach ?>
-             <?php endif ?>
+                    <?php $i++; endforeach ?>
+                <?php endif ?>
 
             </tbody>
 
 
         </table>
 
-        <h3>Asignaturaa</h3>
-
-
 
     </div>
-
 
 
 </div>
@@ -159,11 +151,11 @@
         var boton = $("#optionsRadios");
 
         $(boton).change(function () {
-            if($('#optionsRadiosAlumno').is(':checked')) {
+            if ($('#optionsRadiosAlumno').is(':checked')) {
 
                 $("#alumnos").show();
                 $("#cursos").hide();
-            }else{
+            } else {
 
                 $("#alumnos").hide();
                 $("#cursos").show();
