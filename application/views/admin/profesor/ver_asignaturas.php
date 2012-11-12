@@ -17,11 +17,11 @@
         <tr>
             <td><?php echo $i ?></td>
             <td><?php echo $asignatura->asi_nombre?> </td>
-            <td><a href="<?php echo base_url(); ?>profesor/alumnos_asistencia?asignatura=<? echo $asignatura->idAsignatura?>"><i class="icon-pencil"></i></a></td>
-            <td><a href="<? echo base_url();?>profesor/ver_asistencias?asignatura=<? echo $asignatura->idAsignatura?>"><i class="icon-pencil"></i></a></td>
-            <td><a href="<? echo base_url();?>profesor/ver_notas?asignatura=<? echo $asignatura->idAsignatura?>"><i class="icon-pencil"></i></a></td>
+            <td><a href="<?php echo base_url(); ?>profesor/alumnos_asistencia?asignatura=<?php echo $asignatura->idAsignatura?>"><i class="icon-pencil"></i></a></td>
+            <td><a href="<?php echo base_url();?>profesor/ver_asistencias?asignatura=<?php echo $asignatura->idAsignatura?>"><i class="icon-pencil"></i></a></td>
+            <td><a href="<?php echo base_url();?>profesor/ver_notas?asignatura=<?php echo $asignatura->idAsignatura?>"><i class="icon-pencil"></i></a></td>
             <td>
-                <a href="<? echo base_url();?>profesor/generar_excel?asignatura=<? echo $asignatura->idAsignatura?>&asignatura_nombre=<? echo $asignatura->asi_nombre?>"><i class="icon-pencil"></i></a>
+                <a href="<?php echo base_url();?>profesor/generar_excel?asignatura=<?php echo $asignatura->idAsignatura?>&asignatura_nombre=<?php echo $asignatura->asi_nombre?>"><i class="icon-pencil"></i></a>
             </td>
         </tr>
             <?php $i++; endforeach ?>

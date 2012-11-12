@@ -4,9 +4,9 @@
             <label class="control-label" for="curso">Cursos</label>
             <div class="controls">
                 <select name="curso" id="curso">
-                    <? foreach($cursos as $curso): ?>
+                    <?php foreach($cursos as $curso): ?>
                     <option value="<?php echo $curso->idCurso_abierto;?>"><?php echo $curso->cur_nombre;?></option>
-                    <?  endforeach ?>
+                    <?php  endforeach ?>
                 </select>
             </div>
         </div>
@@ -50,11 +50,11 @@
             <td><?php echo $i ?></td>
             <td><?php echo $alumno->alu_nombres?> </td>
             <td><?php echo $alumno->alu_apellidos; $i++;?>  </td>
-        <? }  ?>
+        <?php }  ?>
             <?php $nota+= $alumno->alu_asi_nota;$band++;
             $nom_past=$nom;
-        endforeach; ?>
-        <?if(sizeof($alumnos)>0){?>
+        endforeach ?>
+        <?php if(sizeof($alumnos)>0){?>
             <td><?php echo $notaf=$nota/$band?> </td>
             <td>
                 <?php if($notaf>10.5){ echo "aprobado"; }else{ echo "desaprobado , debe llevarse en otro curso"; }
@@ -63,7 +63,7 @@
             </td>
                 </tr>
 
-            <?}?>
+            <?php }?>
         </tbody>
     </table>
 </div>

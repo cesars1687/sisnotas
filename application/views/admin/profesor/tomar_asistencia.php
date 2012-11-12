@@ -16,14 +16,14 @@
         <tr>
             <td><?php echo $i ?></td>
             <td><?php echo $alumno->alu_nombres?> </td>
-            <td><input type="checkbox" name="id<? echo $alumno->idAlumnos?>"/></td>
+            <td><input type="checkbox" name="id<?php echo $alumno->idAlumnos?>"/></td>
 
         </tr>
             <?php $i++; endforeach ?>
 
 
         </tbody>
-        <input type="hidden" value="<? echo $asignatura?>" name="asignatura"/>
+        <input type="hidden" value="<?php echo $asignatura?>" name="asignatura"/>
     </table>
      <input type="submit" value="tomar asistencia"/>
     </form>
