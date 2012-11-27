@@ -829,7 +829,7 @@ class CI_Jquery extends CI_Javascript {
 	/**
 	 * Plugin
 	 *
-	 * Load a plugin library
+	 * Load a plugins library
 	 *
 	 * @access	public
 	 * @return	void

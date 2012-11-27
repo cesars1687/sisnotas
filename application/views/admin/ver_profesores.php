@@ -1,4 +1,8 @@
-<a href="<?php echo base_url();?>registro/registrar_profesor" class="btn" style="margin: 10px;">registrar profesor</a>
+<div class="btn-toolbar">
+    <a href="<?php echo base_url();?>registro/registrar_profesor" class="btn btn-primary">
+        Registrar Docente
+    </a>
+</div>
 <div class="well">
     <table class="table">
         <thead>

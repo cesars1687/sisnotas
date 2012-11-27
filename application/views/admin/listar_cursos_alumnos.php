@@ -30,10 +30,11 @@
             <?php endforeach ?>
         </select>
         <div class="control-group">
-            <div class="controls">
+            <div class="btn-toolbar">
+                <button type="submit" class="btn btn-primary">Buscar</button>
 
-                <button type="submit" class="btn">Buscar</button>
             </div>
+
         </div>
 
 

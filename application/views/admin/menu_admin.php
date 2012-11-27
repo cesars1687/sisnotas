@@ -30,6 +30,14 @@
                     <li class="divider-vertical"></li>
                     <li><a href="<?php echo base_url()?>notas"><i class="icon-home icon-white"></i> Filtrar notas</a></li>
                 </ul>
+                <ul class="nav">
+                    <li class="divider-vertical"></li>
+                    <li><a href="<?php echo base_url()?>cursos/listar_cursos"><i class="icon-home icon-white"></i>Mostrar Cursos</a></li>
+                </ul>
+                <ul class="nav">
+                    <li class="divider-vertical"></li>
+                    <li><a href="<?php echo base_url()?>cursos_abiertos/listar_cursos_abiertos"><i class="icon-home icon-white"></i>Mostrar Cursos Abiertos</a></li>
+                </ul>
 
                 <div class="pull-right">
                     <ul class="nav pull-right">

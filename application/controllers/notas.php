@@ -24,6 +24,7 @@ class Notas extends CI_Controller{
     function listar_alumno_notas(){
 
         $nombre = $_GET['nombre'];
+        $data['nombre_alu'] = $nombre;
         $this->load->model('curso_model','',TRUE);
         $data['cursos']= $this->curso_model->listar_cursos_abiertos();
         $this->load->model('alumno_model','',TRUE);

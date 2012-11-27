@@ -20,19 +20,26 @@
 } ?>" >
     <form class="form-horizontal" method="GET" action="<?php echo base_url()?>notas/listar_alumno_notas">
         <div class="control-group">
-            <label class="control-label" for="inputEmail">Nombre</label>
+            <label class="control-label" >Nombre</label>
 
             <div class="controls">
-                <input type="text" name='nombre' id="inputEmail" placeholder="Nombre o Apellido.." style="height: 30px">
+                <input type="text" name='nombre' id="inputEmail" placeholder="Nombre o Apellido.." style="height: 30px"
+                        value="<?php
+                        if(isset($nombre_alu)){
+                            echo $nombre_alu;
+                        }
+                                else{
+                                    echo null;
+                                }
+                        ?>" >
+                <button type="submit"  class="btn btn-primary">Buscar</button>
+
             </div>
+
+
         </div>
 
-        <div class="control-group">
-            <div class="controls">
 
-                <button type="submit" class="btn">Buscar</button>
-            </div>
-        </div>
     </form>
     <h3><?php echo strtoupper($notas[0]->cur_nombre) ?></h3>
 
@@ -71,6 +78,15 @@
             </tbody>
         </table>
     </div>
+    <div class="control-group">
+
+
+        <div class="controls">
+            <?php if(isset($nombre_alu)):?>
+                        <a href="<?php echo base_url()?>alumno/reporte_notas?nombre=<?php echo $nombre_alu?>"  class="btn btn-primary">Reporte PDF</a>
+            <?php endif?>
+        </div>
+    </div>
 </div>
 
 <div id='cursos' style="display: <?php if (!isset($curso_alus)) {
@@ -92,7 +108,7 @@
         <div class="control-group">
             <div class="controls">
 
-                <button type="submit" class="btn">Buscar</button>
+                <button type="submit"  class="btn btn-primary">Buscar</button>
             </div>
         </div>
     </form>

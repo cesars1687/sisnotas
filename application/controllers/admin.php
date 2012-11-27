@@ -62,5 +62,13 @@ class Admin extends CI_Controller
         redirect('login_admin', 'refresh');
     }
 
+    function prueba(){
+
+        $dato['content']=$this->load->view('admin/prueba','',true);
+        $dato['menu']=$this->load->view('admin/menu_admin','',true);
+        $this->load->view('admin/encabezado',$dato);
+
+
+    }
 
 }

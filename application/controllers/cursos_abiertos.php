@@ -7,12 +7,10 @@ class Cursos_abiertos extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->helper(array('form','url'));
+        $this->load->helper(array('form', 'url'));
         $this->load->library('upload');
         $this->load->helper('download');
-
-
-
+        $this->load->model('curso_model', '', true);
 
     }
 
@@ -21,16 +19,10 @@ class Cursos_abiertos extends CI_Controller
 
         $this->load->model('alumno_model', '', true);
         $data['menu'] = $this->load->view('admin/menu_admin', '', true);
-        //$cursos_abiertos['cursos_abiertos']=$this->db->get('curso_abierto')->result();
-        $cursos_abiertos['cursos'] = $this->db->query('select cur_nombre,idCursos from curso_abierto, cursos where cursos_idCursos=idCursos;')->result();
-        $cursos_abiertos['asignaturas'] = $this->db->get('asignatura')->result();
+        $cursos_abiertos['cursos'] = $this->curso_model->listar_cursos_abiertos();
+        //$cursos_abiertos['asignaturas'] = $this->curso_model->asignaturas();
 
-
-        // $cursos_abiertos['cursos']=$this->db->get('cursos')->result();
-        // $cursos_abiertos['cursos']=$this->db->get('cursos')->result();
-
-
-        $data['content'] = $this->load->view('admin/listar_cursos', $cursos_abiertos, true);
+        $data['content'] = $this->load->view('admin/listar_cursos_abiertos', $cursos_abiertos, true);
         $this->load->view('admin/encabezado', $data);
 
         // $this->load->view('admin/footer');
@@ -58,5 +50,34 @@ class Cursos_abiertos extends CI_Controller
         $this->load->view('admin/encabezado', $data);
     }
 
+    function listar_cursos()
+    {
+        $this->load->model('curso_model');
+        $curso = $_POST['curso'];
+        if (isset($curso)) {
 
+            $dato['cursos'] = $this->curso_model->listar_cursos_abiertos();
+            $dato['asignaturas'] = $this->curso_model->listar_asignaturas($curso);
+
+            $data['content'] = $this->load->view('admin/listar_cursos_abiertos', $dato, true);
+            $data['menu'] = $this->load->view('admin/menu_admin', '', true);
+            $this->load->view('admin/encabezado', $data);
+
+        } else {
+            $dato['cursos'] = $this->curso_model->listar_cursos_abiertos();
+            $data['content'] = $this->load->view('admin/listar_cursos_abiertos', $dato, true);
+            $data['menu'] = $this->load->view('admin/menu_admin', '', true);
+            $this->load->view('admin/encabezado', $data);
+
+
+        }
+        function registrar_alumno()
+        {
+            $dato['reg_alu'] = $this->load->view('admin/registrar_alumno');
+            $data['content'] = $this->load->view('admin/listar_cursos', $dato, true);
+            $data['menu'] = $this->load->view('admin/menu_admin', '', true);
+        }
+
+
+    }
 }

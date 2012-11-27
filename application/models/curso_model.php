@@ -30,7 +30,10 @@ class Curso_model extends CI_Model
     {
         return $this->db->query('select asignatura.idAsignatura,asignatura.asi_nombre,cursos.cur_nombre from asignatura,curso_abierto,cursos where asignatura.curso_abierto_idCurso_abierto = ' . $curso . ' and cursos.idCursos = ' . $curso . ' and curso_abierto.idCurso_abierto = ' . $curso)->result();
     }
+    function asignaturas(){
 
+        return $this->db->get('asignatura');
+    }
     function listar_cursos_alumnos($curso)
     {
         return $this->db->query('select cursos.* , asignatura.* , alumnos.* , alu_asi.* from cursos,alumnos,asignatura,curso_abierto,alu_asi
@@ -47,5 +50,28 @@ class Curso_model extends CI_Model
                             order by alu_codigo")->result();
     }
 
+
+    // --------- CURSOS ----------- //
+    function  curso($id){
+       return $this->db->query('select * from cursos where idcursos ='.$id.' ')->result();
+    }
+
+    function registrar_curso($dato){
+
+        $this->db->insert('cursos',$dato);
+    }
+    function listar_cursos(){
+
+        return $this->db->query('select * from cursos')->result();
+    }
+    function eliminar_curso($id){
+
+        $this->db->delete('cursos',array('idCursos'=>$id));
+    }
+    function editar_curso($id,$data){
+
+       // $this->db->where('idCursos',$id);
+        $this->db->update('cursos',$data,array('idCursos' => $id));
+    }
 
 }

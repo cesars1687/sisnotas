@@ -2046,7 +2046,7 @@ class CI_Email {
 						'aifc'	=>	'audio/x-aiff',
 						'ram'	=>	'audio/x-pn-realaudio',
 						'rm'	=>	'audio/x-pn-realaudio',
-						'rpm'	=>	'audio/x-pn-realaudio-plugin',
+						'rpm'	=>	'audio/x-pn-realaudio-plugins',
 						'ra'	=>	'audio/x-realaudio',
 						'rv'	=>	'video/vnd.rn-realvideo',
 						'wav'	=>	'audio/x-wav',
