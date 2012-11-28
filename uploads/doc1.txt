@@ -1,0 +1,9 @@
+mov al,00H; para b5 = 0 y configurarlo como salida 
+mov dx, 037AH; Direccion registro de Control 
+out dx,al;Carga el registro de control 
+
+:Escribir datos en el puerto de salida LPT1 
+
+mov dx,0378H 
+mov al,dato 
+out dx,al 
