@@ -5,6 +5,9 @@ class Pdf extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        if(!$this->session->userdata('rol')==1){
+            redirect(base_url().'login_admin','refresh');
+        }
     }
     public function pdf() {
          echo 'ola';

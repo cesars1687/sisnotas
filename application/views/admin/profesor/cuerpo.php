@@ -14,9 +14,13 @@
 
 </head>
 <body>
+<div id="contenido">
+    <img id ="logo_principal" src="<?php echo base_url()?>media/images/logo_uigv.jpg">
+    <?php echo $menu; ?>
+    <?php echo $content; ?>
 
-<?php echo $menu; ?>
-<?php echo $content; ?>
+</div>
+
 
 </body>
 

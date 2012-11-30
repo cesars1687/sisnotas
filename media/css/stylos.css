@@ -1,13 +1,18 @@
 body {
-
     background: -webkit-radial-gradient(circle, #FBEC99, #f3de68);
 }
 .navbar-inverse .navbar-inner{
-
     background-image:-webkit-linear-gradient(top, #1A3691, #111)  ;
 }
 #contenido{
-
     width: 75%;
     margin: 0 auto 0 auto;
+}
+.collapse {
+    overflow:visible;
+}
+#logo_principal{
+   width: 1200px;
+   height: 150px;
+   margin-bottom: 10px;
 }

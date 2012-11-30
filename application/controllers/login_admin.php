@@ -2,14 +2,15 @@
 
 class Login_admin extends CI_Controller {
 
+    function __construct()
+    {
+        parent::__construct();
 
+
+
+    }
     public function index(){
-
-
        $this->load->view('admin/login_admin');
     }
-    public function prueba()
-    {
-        $this->load->view('admin/login_admin');
-    }
+
 }

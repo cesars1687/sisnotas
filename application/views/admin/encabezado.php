@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>media/css/stylos.css" media="all"/>
     <script type="text/javascript" src="<?php echo base_url(); ?>media/jquery/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>media/bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>media/bootstrap/js/bootstrap.min.js"></script>
+
      <script type="text/javascript">
          function readURL(input) {
              console.log("se cargara la imagen");
@@ -27,7 +27,7 @@
 </head>
 <body>
    <div id="contenido">
-
+      <img id ="logo_principal" src="<?php echo base_url()?>media/images/logo_uigv.jpg">
        <?php echo $menu; ?>
        <?php echo $content; ?>
 

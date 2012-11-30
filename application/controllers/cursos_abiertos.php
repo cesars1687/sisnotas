@@ -7,6 +7,9 @@ class Cursos_abiertos extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        if(!$this->session->userdata('rol')==1){
+            redirect(base_url().'login_admin','refresh');
+        }
         $this->load->helper(array('form', 'url'));
         $this->load->library('upload');
         $this->load->helper('download');

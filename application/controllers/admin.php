@@ -15,40 +15,45 @@ class Admin extends CI_Controller
 
         $this->load->model('admin_model');
 
-        if($this->check_database($_POST['username'],$_POST['password'])){
-            echo $this->session->userdata('rol');
-            if($this->session->userdata('rol')==3){
-                redirect(base_url().'profesor','refresh');
-            }else{
-                redirect(base_url().'alumno/listar_alumno','refresh');
+        if ($this->check_database($_POST['username'], $_POST['password'])) {
+
+            if ($this->session->userdata('rol') == 3) {
+
+                redirect(base_url() . 'profesor');
+            } else if ($this->session->userdata('rol') == 1) {
+
+                redirect(base_url() . 'alumno/listar_alumno');
             }
-        }else{
-                redirect(base_url().'login_admin','refresh');
+        } else {
+            echo 'no entro';
+            redirect(base_url() . 'login_admin', 'refresh');
         }
 
 
     }
 
-   function check_database($username,$password)
+    function check_database($username, $password)
     {
 
         $result = $this->admin_model->login($username, $password);
-
+        var_dump($result);
         if ($result) {
-            $this->session->sess_destroy();
-            $sess_array = array();
+            // $this->session->sess_destroy();
+
+
             foreach ($result as $row) {
                 $sess_array = array(
                     'idUsuario' => $row->idUsuarios,
                     'username' => $row->usu_usuario,
-                    'rol'=> $row->usu_rol
+                    'rol' => $row->usu_rol
                 );
-                $this->session->set_userdata('rol',  $row->usu_rol);
+                $this->session->set_userdata('rol', $row->usu_rol);
                 $this->session->set_userdata($sess_array);
             }
 
             return TRUE;
         } else {
+
             $this->form_validation->set_message('check_database', 'Invalido Username o Password');
             return FALSE;
         }
@@ -62,13 +67,5 @@ class Admin extends CI_Controller
         redirect('login_admin', 'refresh');
     }
 
-    function prueba(){
-
-        $dato['content']=$this->load->view('admin/prueba','',true);
-        $dato['menu']=$this->load->view('admin/menu_admin','',true);
-        $this->load->view('admin/encabezado',$dato);
-
-
-    }
 
 }
